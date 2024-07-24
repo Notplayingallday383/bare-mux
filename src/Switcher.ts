@@ -1,14 +1,15 @@
 import { BareTransport } from "./BareTypes";
 import RemoteTransport from "./RemoteClient";
 
-declare var global: any;
+
+declare var globalThis: any;
 
 if (typeof self === 'undefined') {
-  var self = global;
+  var self = globalThis;
 }
 
 if (typeof window === 'undefined') {
-  var window = global;
+  var window = globalThis;
 }
 
 //@ts-expect-error not installing node types for this one thing

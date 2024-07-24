@@ -26,10 +26,10 @@ export function registerRemoteListener(channel: ServiceWorker) {
   });
 }
 
-declare var global: any;
+declare var globalThis: any;
 
 if (typeof self === 'undefined') {
-  var self = global;
+  var self = globalThis;
 }
 
 // @ts-ignore
