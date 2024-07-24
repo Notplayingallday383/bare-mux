@@ -1,10 +1,11 @@
 {
-  "name": "@mercuryworkshop/bare-mux",
-  "version": "1.1.4-tb1",
-  "description": "",
+  "name": "bare-mux-tb",
+  "version": "1.1.4-next",
+  "description": "A version of bare-mux modified to work with nextJS sites that wont stop yapping about self or whatever being undefined",
   "type": "module",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepare": "npm run build"
   },
   "author": "",
   "main": "dist/index.cjs",
