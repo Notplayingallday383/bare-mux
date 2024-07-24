@@ -32,6 +32,7 @@ if (typeof self === 'undefined') {
   var self = global;
 }
 
+// @ts-ignore
 declare var self: ServiceWorkerGlobalScope;
 let remote: RemoteTransport;
 if ("ServiceWorkerGlobalScope" in self) {
@@ -97,6 +98,7 @@ export default class RemoteTransport implements BareTransport {
     });
   }
 
+  // @ts-ignore
   connect(
     url: URL,
     origin: string,

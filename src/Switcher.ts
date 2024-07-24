@@ -45,6 +45,7 @@ class Switcher {
       console.log(`bare-mux: ${type}`, data, `${"ServiceWorker" in globalThis}`);
       switch (type) {
         case "setremote":
+          // @ts-ignore
           this.active = new RemoteTransport
           break;
         case "set":

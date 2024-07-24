@@ -4,8 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "prepare": "npm run build"
+    "build": "rollup -c"
   },
   "author": "",
   "main": "dist/index.cjs",
