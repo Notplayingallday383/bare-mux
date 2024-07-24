@@ -26,6 +26,12 @@ export function registerRemoteListener(channel: ServiceWorker) {
   });
 }
 
+declare var global: any;
+
+if (typeof self === 'undefined') {
+  var self = global;
+}
+
 declare var self: ServiceWorkerGlobalScope;
 let remote: RemoteTransport;
 if ("ServiceWorkerGlobalScope" in self) {
