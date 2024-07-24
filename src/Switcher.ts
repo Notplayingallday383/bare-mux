@@ -6,6 +6,11 @@ declare var global: any;
 if (typeof self === 'undefined') {
   var self = global;
 }
+
+if (typeof window === 'undefined') {
+  var window = global;
+}
+
 //@ts-expect-error not installing node types for this one thing
 self.BCC_VERSION = process.env.BARE_MUX_VERSION;
 console.debug("BARE_MUX_VERSION: " + self.BCC_VERSION);

@@ -108,8 +108,11 @@
   if (typeof self === 'undefined') {
       var self = global;
   }
+  if (typeof window === 'undefined') {
+      var window = global;
+  }
   //@ts-expect-error not installing node types for this one thing
-  self.BCC_VERSION = "1.1.4-tb";
+  self.BCC_VERSION = "1.1.4-tb1";
   console.debug("BARE_MUX_VERSION: " + self.BCC_VERSION);
   function initTransport(name, config) {
       let cl = new ((0, eval)(name))(...config);
