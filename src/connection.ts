@@ -46,7 +46,6 @@ if (typeof self === 'undefined') {
 }
 
 async function searchForPort(): Promise<MessagePort> {
-	// @ts-expect-error
 	const clients: SWClient[] = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
 	const promises: Promise<MessagePort>[] = clients.map(async (x: SWClient) => {
 		const port = await tryGetPort(x);
@@ -139,7 +138,6 @@ export class WorkerConnection {
 	}
 
 	createChannel(workerPath?: string, inInit?: boolean) {
-		// @ts-expect-error
 		if (self.clients) {
 			// running in a ServiceWorker
 			// ask a window for the worker port, register for refreshPort

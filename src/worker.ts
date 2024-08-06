@@ -87,7 +87,6 @@ if (typeof self === 'undefined') {
   var self = globalThis;
 }
 
-// @ts-expect-error
 self.onconnect = (event: MessageEvent) => {
 	handleConnection(event.ports[0])
 }
