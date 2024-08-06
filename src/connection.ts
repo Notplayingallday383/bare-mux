@@ -39,6 +39,12 @@ export type BroadcastMessage = {
 	type: "refreshPort",
 }
 
+declare var globalThis: any;
+
+if (typeof self === 'undefined') {
+  var self = globalThis;
+}
+
 async function searchForPort(): Promise<MessagePort> {
 	// @ts-expect-error
 	const clients: SWClient[] = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
