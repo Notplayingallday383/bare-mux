@@ -92,8 +92,7 @@ function testPort(port: MessagePort): Promise<void> {
 function createPort(path: string, registerHandlers: boolean): MessagePort {
 	const worker = new SharedWorker(path, "bare-mux-worker");
 	if (registerHandlers) {
-		// @ts-expect-error we are using snapshot.ts
-		serviceWorker.addEventListener("message", (event: MessageEvent) => {
+		globalThis.navigator.serviceWorker.addEventListener("message", (event: MessageEvent) => {
 			if (event.data.type === "getPort" && event.data.port) {
 				console.debug("bare-mux: recieved request for port from sw");
 				const newWorker = new SharedWorker(path, "bare-mux-worker");
